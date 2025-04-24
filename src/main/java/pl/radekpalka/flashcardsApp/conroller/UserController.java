@@ -3,17 +3,14 @@ package pl.radekpalka.flashcardsApp.conroller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.radekpalka.flashcardsApp.dto.UserLoginDto;
 import pl.radekpalka.flashcardsApp.dto.UserRegistrationDto;
 import pl.radekpalka.flashcardsApp.model.User;
 import pl.radekpalka.flashcardsApp.repository.UserRepository;
 
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api")
 public class UserController {
