@@ -10,7 +10,7 @@ import pl.radekpalka.flashcardsApp.model.User;
 import pl.radekpalka.flashcardsApp.repository.UserRepository;
 
 import java.util.Optional;
-@CrossOrigin(origins = "http://localhost:5173")
+
 @RestController
 @RequestMapping("/api")
 public class UserController {
@@ -37,7 +37,7 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserLoginDto dto){
-        Optional<User> userOptional = userRepository.findByUser(dto.getLogin());
+        Optional<User> userOptional = userRepository.findByLogin(dto.getLogin());
 
         if (userOptional.isEmpty()){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Wrong login");
